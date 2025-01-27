@@ -1,0 +1,22 @@
+.desktopContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  /* Content Layout */
+  .contentLayout {
+    display: flex;
+    flex: 1;
+  }
+  
+  /* Main Content */
+  .mainContent {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  

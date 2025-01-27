@@ -1,0 +1,30 @@
+.sidebar {
+    width: 200px;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .sidebarItem {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebarItem:hover {
+    background-color: #0056b3;
+  }
+  
+  .activeItem {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  

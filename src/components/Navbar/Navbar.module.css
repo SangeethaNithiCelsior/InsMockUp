@@ -1,0 +1,47 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px;
+}
+
+.navTabs {
+  display: flex;
+  gap: 10px;
+}
+
+.navTab {
+  padding: 10px 15px;
+  font-size: 16px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navTab:hover {
+  background-color: #0056b3;
+}
+
+.activeTab {
+  border-bottom: 2px solid #fff;
+  font-weight: bold;
+}
+
+.logoutButton {
+  padding: 8px 15px;
+  font-size: 14px;
+  color: #007bff;
+  background-color: #fff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logoutButton:hover {
+  background-color: #007bff;
+  color: #fff;
+}
