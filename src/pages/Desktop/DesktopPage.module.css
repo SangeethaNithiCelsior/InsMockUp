@@ -1,22 +1,37 @@
+/* src/pages/DesktopPage.module.css */
 .desktopContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  /* Content Layout */
-  .contentLayout {
-    display: flex;
-    flex: 1;
-  }
-  
-  /* Main Content */
-  .mainContent {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    margin: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Content Layout */
+.contentLayout {
+  display: flex;
+  flex: 1;
+}
+
+/* Main Content */
+.mainContent {
+  flex: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* New Account Button */
+.newAccountButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.newAccountButton:hover {
+  background-color: #0056b3;
+}
