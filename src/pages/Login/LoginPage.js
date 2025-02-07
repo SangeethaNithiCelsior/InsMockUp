@@ -21,6 +21,10 @@ const LoginPage = () => {
     }
   };
 
+  const handleResetPassword = () => {
+    navigate('/reset-password'); // Navigate to the Reset Password page
+  };
+
   return (
     <div className={styles.loginContainer}>
       <h1 className={styles.pageTitle}>Login to PolicyCenter</h1>
@@ -43,6 +47,9 @@ const LoginPage = () => {
           variant="primary"
           disabled={!username || !password}
         />
+        <button onClick={handleResetPassword} className={styles.resetPasswordLink}>
+          Reset Password
+        </button>
       </div>
     </div>
   );
