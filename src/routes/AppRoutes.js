@@ -13,6 +13,7 @@ const AppRoutes = () => {
         <Route path="/desktop" element={<DesktopPage />} />
         <Route path="/create-account" element={<CreateAccountPage />} />
         <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );

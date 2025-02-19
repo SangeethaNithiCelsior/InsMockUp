@@ -3,22 +3,40 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
+  background-color: #f0f2f5;
+  font-family: 'Arial', sans-serif;
 }
 
 /* Content Layout */
 .contentLayout {
   display: flex;
   flex: 1;
+  padding: 20px;
 }
 
 /* Main Content */
 .mainContent {
   flex: 1;
   background-color: #fff;
-  padding: 20px;
+  padding: 30px;
   border-radius: 10px;
   margin: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.mainContent:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.mainContent h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.mainContent p {
+  font-size: 1.2rem;
+  color: #555;
 }
 
 /* New Account Button */
@@ -30,6 +48,7 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .newAccountButton:hover {
