@@ -43,6 +43,11 @@ const CreateAccountPage = () => {
         navigate('/desktop'); // Navigate back to the Desktop page
     };
 
+    // Handle New Submission button click
+    const handleNewSubmission = () => {
+        navigate('/select-product'); // Navigate to the Select Product page
+    };
+
     // List of US states for the dropdown
     const usStates = [
         'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -63,6 +68,9 @@ const CreateAccountPage = () => {
                 </button>
                 <button onClick={handleCancel} className={styles.cancelButton}>
                     Cancel
+                </button>
+                <button onClick={handleNewSubmission} className={styles.newSubmissionButton}>
+                    New Submission
                 </button>
             </div>
 

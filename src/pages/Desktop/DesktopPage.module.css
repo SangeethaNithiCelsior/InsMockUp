@@ -1,56 +1,70 @@
 /* src/pages/DesktopPage.module.css */
 .desktopContainer {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: #f0f2f5;
-  font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 /* Content Layout */
 .contentLayout {
-  display: flex;
-  flex: 1;
-  padding: 20px;
+    display: flex;
+    flex: 1;
+    padding: 20px;
 }
 
 /* Main Content */
 .mainContent {
-  flex: 1;
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  margin: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: box-shadow 0.3s ease;
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
-.mainContent:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
+    .mainContent:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
 
-.mainContent h1 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
+    .mainContent h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
 
-.mainContent p {
-  font-size: 1.2rem;
-  color: #555;
-}
+    .mainContent p {
+        font-size: 1.2rem;
+        color: #555;
+    }
 
 /* New Account Button */
 .newAccountButton {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.newAccountButton:hover {
-  background-color: #0056b3;
+    .newAccountButton:hover {
+        background-color: #0056b3;
+    }
+
+/* New Submission Button */
+.newSubmissionButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+    .newSubmissionButton:hover {
+        background-color: #218838;
+    }
