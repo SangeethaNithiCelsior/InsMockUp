@@ -1,11 +1,23 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import styles from './SelectProductPage.module.css';
 
 const SelectProductPage = () => {
+    const navigate = useNavigate(); // Initialize navigate
+
+    const handleBackClick = () => {
+        navigate('/desktop'); // Navigate to the Desktop page
+    };
+
     return (
         <div className={styles.selectProductContainer}>
             <h1>Select Product</h1>
             <p>Please select a product to proceed with your submission.</p>
+
+            {/* Add Back Button */}
+            <button className={styles.backButton} onClick={handleBackClick}>
+                Back to Desktop
+            </button>
 
             <div className={styles.tableContainer}>
                 <table className={styles.table}>
@@ -44,4 +56,3 @@ const SelectProductPage = () => {
 };
 
 export default SelectProductPage;
-
