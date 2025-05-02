@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../../components/Navbar/Navbar';
 import styles from './CreateAccountPage.module.css';
 
 const CreateAccountPage = () => {
+    const [activeTopTab, setActiveTopTab] = useState('Account');
     const navigate = useNavigate();
 
     // State to manage form fields
@@ -43,11 +45,6 @@ const CreateAccountPage = () => {
         navigate('/desktop'); // Navigate back to the Desktop page
     };
 
-    // Handle New Submission button click
-    const handleNewSubmission = () => {
-        navigate('/select-product'); // Navigate to the Select Product page
-    };
-
     // List of US states for the dropdown
     const usStates = [
         'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware',
@@ -59,127 +56,148 @@ const CreateAccountPage = () => {
         'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
     ];
 
+    const handleTopTabClick = (tab) => {
+        setActiveTopTab(tab);
+        if (tab === 'Desktop') {
+            navigate('/desktop'); // Navigate to the Desktop page
+        } else if (tab === 'Submission') {
+            navigate('/select-product'); // Navigate to the Select Product page
+        }
+    };
+
+    const handleLogout = () => {
+        alert('You have been logged out.');
+        navigate('/'); // Redirect to the Login Page
+    };
+
     return (
         <div className={styles.createAccountContainer}>
-            {/* Update and Cancel Buttons */}
-            <div className={styles.buttonContainer}>
-                <button onClick={handleUpdate} className={styles.updateButton}>
-                    Update
-                </button>
-                <button onClick={handleCancel} className={styles.cancelButton}>
-                    Cancel
-                </button>
-                <button onClick={handleNewSubmission} className={styles.newSubmissionButton}>
-                    New Submission
-                </button>
+            {/* Top Bar */}
+            <div className={styles.topBar}>
+                <div className={styles.appName}>PolicyMaster</div>
+                <Navbar
+                    tabs={['Desktop', 'Account', 'Submission', 'Contact', 'Search', 'Administration']}
+                    activeTab={activeTopTab}
+                    onTabClick={handleTopTabClick}
+                    onLogout={handleLogout}
+                />
             </div>
 
-            {/* Form */}
-            <form className={styles.form}>
-                <div className={styles.formGroup}>
-                    <label>Organization <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="text"
-                        name="organization"
-                        value={formData.organization}
-                        onChange={handleChange}
-                        placeholder="Enter organization name"
-                    />
+            {/* Page Content */}
+            <div className={styles.pageContent}>
+                {/* Title and Buttons */}
+                <div className={styles.titleContainer}>
+                    <h1 className={styles.pageTitle}>Create Account</h1>
+                    <div className={styles.buttonContainer}>
+                        <button onClick={handleUpdate} className={styles.updateButton}>
+                            Update
+                        </button>
+                        <button onClick={handleCancel} className={styles.cancelButton}>
+                            Cancel
+                        </button>
+                    </div>
                 </div>
 
-                <div className={styles.formGroup}>
-                    <label>Date Application Received <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="date"
-                        name="dateApplicationReceived"
-                        value={formData.dateApplicationReceived}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>Name <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Enter name"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>Address Line 1 <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="text"
-                        name="addressLine1"
-                        value={formData.addressLine1}
-                        onChange={handleChange}
-                        placeholder="Enter address line 1"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>Address Line 2</label>
-                    <input
-                        type="text"
-                        name="addressLine2"
-                        value={formData.addressLine2}
-                        onChange={handleChange}
-                        placeholder="Enter address line 2"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>City <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="text"
-                        name="city"
-                        value={formData.city}
-                        onChange={handleChange}
-                        placeholder="Enter city"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>County <span className={styles.mandatory}>*</span></label>
-                    <input
-                        type="text"
-                        name="county"
-                        value={formData.county}
-                        onChange={handleChange}
-                        placeholder="Enter county"
-                    />
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>State <span className={styles.mandatory}>*</span></label>
-                    <select
-                        name="state"
-                        value={formData.state}
-                        onChange={handleChange}
-                    >
-                        <option value="">Select a state</option>
-                        {usStates.map((state) => (
-                            <option key={state} value={state}>
-                                {state}
-                            </option>
-                        ))}
-                    </select>
-                </div>
-
-                <div className={styles.formGroup}>
-                    <label>Country</label>
-                    <input
-                        type="text"
-                        name="country"
-                        value={formData.country}
-                        readOnly // Non-editable
-                    />
-                </div>
-            </form>
+                {/* Form */}
+                <form className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label>Organization <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="text"
+                            name="organization"
+                            value={formData.organization}
+                            onChange={handleChange}
+                            placeholder="Enter organization name"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>Date Application Received <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="date"
+                            name="dateApplicationReceived"
+                            value={formData.dateApplicationReceived}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>Name <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Enter name"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>Address Line 1 <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="text"
+                            name="addressLine1"
+                            value={formData.addressLine1}
+                            onChange={handleChange}
+                            placeholder="Enter address line 1"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>Address Line 2</label>
+                        <input
+                            type="text"
+                            name="addressLine2"
+                            value={formData.addressLine2}
+                            onChange={handleChange}
+                            placeholder="Enter address line 2"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>City <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="text"
+                            name="city"
+                            value={formData.city}
+                            onChange={handleChange}
+                            placeholder="Enter city"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>County <span className={styles.mandatory}>*</span></label>
+                        <input
+                            type="text"
+                            name="county"
+                            value={formData.county}
+                            onChange={handleChange}
+                            placeholder="Enter county"
+                        />
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>State <span className={styles.mandatory}>*</span></label>
+                        <select
+                            name="state"
+                            value={formData.state}
+                            onChange={handleChange}
+                        >
+                            <option value="">Select a state</option>
+                            {usStates.map((state) => (
+                                <option key={state} value={state}>
+                                    {state}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
+                    <div className={styles.formGroup}>
+                        <label>Country</label>
+                        <input
+                            type="text"
+                            name="country"
+                            value={formData.country}
+                            readOnly // Non-editable
+                        />
+                    </div>
+                </form>
+            </div>
         </div>
     );
 };
 
 export default CreateAccountPage;
+
