@@ -5,8 +5,9 @@ import Button from '../../components/Button/Button';
 import config from '../../config/config'; // Import the config file
 
 const LoginPage = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState(''); // Blank by default
+  const [password, setPassword] = useState(''); // Blank by default
+  const [errorMessage, setErrorMessage] = useState(''); // State for error message
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -14,10 +15,9 @@ const LoginPage = () => {
     const { username: validUsername, password: validPassword } = config.credentials;
 
     if (username === validUsername && password === validPassword) {
-      alert('Login Successful!');
       navigate('/desktop'); // Redirect to the Desktop page
     } else {
-      alert('Invalid Credentials');
+      setErrorMessage('Your user name or password maybe incorrect. Please try again'); // Set error message
     }
   };
 
@@ -27,29 +27,35 @@ const LoginPage = () => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1 className={styles.pageTitle}>Login to PolicyCenter</h1>
-      <div className={styles.loginForm}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <Button
-          label="Login"
-          onClick={handleLogin}
-          variant="primary"
-          disabled={!username || !password}
-        />
-        <button onClick={handleResetPassword} className={styles.resetPasswordLink}>
-          Reset Password
-        </button>
+      <h1 className={styles.pageTitle}>PolicyMaster</h1>
+      <div className={styles.loginFormContainer}>
+        <div className={styles.loginForm}>
+          <label htmlFor="username" className={styles.inputLabel}>Username</label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor="password" className={styles.inputLabel}>Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <Button
+            label="Login"
+            onClick={handleLogin}
+            variant="primary"
+          />
+          {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>} {/* Display error message */}
+          <button onClick={handleResetPassword} className={styles.resetPasswordLink}>
+            Reset Password
+          </button>
+        </div>
       </div>
     </div>
   );

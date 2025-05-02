@@ -1,8 +1,45 @@
-/* src/pages/DesktopPage.module.css */
-.desktopContainer {
+/* Top Bar */
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the left */
+    background-color: #324C76; /* Dark navy blue */
+    padding: 10px 20px;
+    color: white;
+}
+
+/* Application Name */
+.appName {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    margin-right: 80px; /* Increased spacing between PolicyMaster and Desktop */
+}
+
+/* Logout Button */
+.logoutButton {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px;
+    margin-left: auto; /* Push the logout button to the right */
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #324C76; /* Match the PolicyMaster background color */
+    color: white;
+    padding: 20px;
+    height: calc(100vh - 60px); /* Adjust height to account for the top bar */
+    width: 200px; /* Reduced the width */
+    position: fixed; /* Keep the sidebar fixed on the left */
+    top: 60px; /* Start below the PolicyMaster title */
+    left: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    gap: 10px;
 }
 
 /* Content Layout */
@@ -10,6 +47,7 @@
     display: flex;
     flex: 1;
     padding: 20px;
+    margin-left: 200px; /* Add margin to account for the sidebar width */
 }
 
 /* Main Content */
