@@ -14,7 +14,7 @@ const DesktopPage = () => {
         if (tab === 'New Account') {
             navigate('/create-account'); // Navigate to the Create Account page
         } else if (tab === 'New Submission') {
-            navigate('/select-product'); // Navigate to the Select Product page
+            navigate('/new-submission'); // Navigate to the New Submissions
         } else if (tab === 'Contact') {
             alert('Contact tab clicked!'); // Placeholder for Contact functionality
         } else if (tab === 'Search') {

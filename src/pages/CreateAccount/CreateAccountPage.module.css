@@ -21,10 +21,50 @@
 
 .pageContent {
     background-color: #f0f1f5; /* Pale grey for the form area */
-    padding: 20px 250px; /* Add horizontal padding to align with the Desktop tab */
-    margin: 10px auto; /* Center the form area */
+    padding: 20px; /* Add horizontal padding to align with the Desktop tab */
     margin-left:250px;
-    max-width: 800px; /* Limit the width of the form area */
+}
+
+.errorSection
+{
+    border: 2px solid #d9534f; /* Red border */
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff5f5; /* Light red background for the section */
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.errorHeading {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d9534f; /* Red color for the heading */
+    margin-bottom: 10px;
+}
+
+.errorMessageContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.errorIcon {
+    width: 24px;
+    height: 24px;
+    background-color: #d9534f; /* Red background for the circle */
+    color: white; /* White text for the exclamation mark */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50%; /* Make it a circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.errorMessage {
+    color: #d9534f; /* Red color for the error message */
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .titleContainer {

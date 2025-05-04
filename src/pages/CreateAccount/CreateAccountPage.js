@@ -5,6 +5,7 @@ import styles from './CreateAccountPage.module.css';
 
 const CreateAccountPage = () => {
     const [activeTopTab, setActiveTopTab] = useState('Account');
+    const [showError, setShowError] = useState(false); // State to track error visibility
     const navigate = useNavigate();
 
     // State to manage form fields
@@ -33,9 +34,10 @@ const CreateAccountPage = () => {
     const handleUpdate = () => {
         const { organization, dateApplicationReceived, name, addressLine1, city, county, state } = formData;
         if (!organization || !dateApplicationReceived || !name || !addressLine1 || !city || !county || !state) {
-            alert('Please fill in all mandatory fields.');
+            setShowError(true); // Show error message
             return;
         }
+        setShowError(false); // Hide error message if validation passes
         alert('Account created successfully!');
         navigate('/desktop'); // Navigate back to the Desktop page
     };
@@ -97,6 +99,19 @@ const CreateAccountPage = () => {
                         </button>
                     </div>
                 </div>
+
+                {/* Error Section */}
+                {showError && (
+                    <div className={styles.errorSection}>
+                        Errors on current page
+                        <div className={styles.errorMessageContainer}>
+                            <div className={styles.errorIcon}>!</div>
+                            <div className={styles.errorMessage}>
+                                Please fill in all mandatory fields.
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 {/* Form */}
                 <form className={styles.form}>
@@ -200,4 +215,3 @@ const CreateAccountPage = () => {
 };
 
 export default CreateAccountPage;
-
