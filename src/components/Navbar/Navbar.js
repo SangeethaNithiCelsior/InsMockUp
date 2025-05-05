@@ -23,26 +23,29 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
     };
 
     return (
-        <div className={styles.navbar}>
-            <div className={styles.navTabs}>
+        <div id="navbar-container" className={styles.navbar}>
+            <div id="nav-tabs" className={styles.navTabs}>
                 {tabs.map((tab, index) => {
                     if (tab === 'Account') {
                         return (
                             <div
                                 key={index}
+                                id="account-tab"
                                 className={styles.dropdown}
                                 onMouseEnter={handleAccountMouseEnter}
                                 onMouseLeave={handleAccountMouseLeave}
                             >
                                 <button
+                                    id="account-button"
                                     className={`${styles.navTab} ${activeTab === tab ? styles.activeTab : ''}`}
                                     onClick={() => onTabClick(tab)}
                                 >
                                     {tab} ▼ {/* Down arrow icon */}
                                 </button>
                                 {isAccountDropdownVisible && (
-                                    <div className={styles.dropdownContent}>
+                                    <div id="account-dropdown" className={styles.dropdownContent}>
                                         <button
+                                            id="new-account-button"
                                             className={styles.dropdownItem}
                                             onClick={() => onTabClick('New Account')}
                                         >
@@ -56,19 +59,22 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
                         return (
                             <div
                                 key={index}
+                                id="submission-tab"
                                 className={styles.dropdown}
                                 onMouseEnter={handleSubmissionMouseEnter}
                                 onMouseLeave={handleSubmissionMouseLeave}
                             >
                                 <button
+                                    id="submission-button"
                                     className={`${styles.navTab} ${activeTab === tab ? styles.activeTab : ''}`}
                                     onClick={() => onTabClick(tab)}
                                 >
                                     {tab} ▼ {/* Down arrow icon */}
                                 </button>
                                 {isSubmissionDropdownVisible && (
-                                    <div className={styles.dropdownContent}>
+                                    <div id="submission-dropdown" className={styles.dropdownContent}>
                                         <button
+                                            id="new-submission-button"
                                             className={styles.dropdownItem}
                                             onClick={() => onTabClick('New Submission')}
                                         >
@@ -82,6 +88,7 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
                         return (
                             <button
                                 key={index}
+                                id={`${tab.toLowerCase()}-button`}
                                 className={`${styles.navTab} ${activeTab === tab ? styles.activeTab : ''}`}
                                 onClick={() => onTabClick(tab)}
                             >
@@ -92,7 +99,7 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
                 })}
             </div>
             {/* Logout Button */}
-            <button className={styles.logoutButton} onClick={onLogout}>
+            <button id="logout-button" className={styles.logoutButton} onClick={onLogout}>
                 Logout
             </button>
         </div>

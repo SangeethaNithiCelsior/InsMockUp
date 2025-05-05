@@ -22,11 +22,12 @@ const NewSubmissionsPage = () => {
     };
 
     return (
-        <div className={styles.newSubmissionsContainer}>
+        <div id="new-submissions-container" className={styles.newSubmissionsContainer}>
             {/* Top Bar */}
-            <div className={styles.topBar}>
-                <div className={styles.appName}>PolicyMaster</div>
+            <div id="top-bar" className={styles.topBar}>
+                <div id="app-name" className={styles.appName}>PolicyMaster</div>
                 <Navbar
+                    id="navbar"
                     tabs={['Desktop', 'Account', 'Submission', 'Contact', 'Search', 'Administration']}
                     activeTab={activeTopTab}
                     onTabClick={handleTopTabClick}
@@ -35,48 +36,47 @@ const NewSubmissionsPage = () => {
             </div>
 
             {/* Page Content */}
-            <div className={styles.pageContent}>
-                <h1 className={styles.pageTitle}>New Submissions</h1>
-                <p>Please select a product to proceed with your submission.</p>
+            <div id="page-content" className={styles.pageContent}>
+                <h1 id="page-title" className={styles.pageTitle}>New Submissions</h1>
+                <p id="page-description">Please select a product to proceed with your submission.</p>
 
-                <div className={styles.tableContainer}>
-                    <table className={styles.table}>
+                <div id="table-container" className={styles.tableContainer}>
+                    <table id="product-table" className={styles.table}>
                         <thead>
                             <tr>
-                                <th></th>
-                                <th>Product Name</th>
-                                <th>Product Description</th>
-                                <th>Status</th>
+                                <th id="column-select"></th>
+                                <th id="column-product-name">Product Name</th>
+                                <th id="column-product-description">Product Description</th>
+                                <th id="column-status">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><button className={styles.selectButton}>Select</button></td>
+                                <td><button id="select-commercial-property" className={styles.selectButton}>Select</button></td>
                                 <td>Commercial Property</td>
                                 <td>Commercial Property</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td><button className={styles.selectButton}>Select</button></td>
+                                <td><button id="select-general-liability" className={styles.selectButton}>Select</button></td>
                                 <td>General Liability</td>
                                 <td>General Liability</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td><button className={styles.selectButton}>Select</button></td>
+                                <td><button id="select-cyber" className={styles.selectButton}>Select</button></td>
                                 <td>Cyber</td>
                                 <td>Cyber</td>
                                 <td>Available</td>
                             </tr>
-                            {/* New Rows */}
                             <tr>
-                                <td><button className={styles.selectButton}>Select</button></td>
+                                <td><button id="select-inland-marine" className={styles.selectButton}>Select</button></td>
                                 <td>Inland Marine</td>
                                 <td>Inland Marine</td>
                                 <td>Available</td>
                             </tr>
                             <tr>
-                                <td><button className={styles.selectButton}>Select</button></td>
+                                <td><button id="select-workers-compensation" className={styles.selectButton}>Select</button></td>
                                 <td>Workers' Compensation</td>
                                 <td>Workers' Compensation</td>
                                 <td>Available</td>
@@ -90,5 +90,3 @@ const NewSubmissionsPage = () => {
 };
 
 export default NewSubmissionsPage;
-
-

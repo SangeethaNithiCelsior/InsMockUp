@@ -50,7 +50,8 @@ const LoginPage = () => {
                     <button onClick={handleLogin} className={styles.submitButton}>
                         Login
                     </button>
-                    {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>} {/* Display error message */}
+                    {errorMessage && (
+                        <p id="login-error" className={styles.errorMessage}>{errorMessage}</p>)}
                     <button onClick={handleResetPassword} className={styles.resetPasswordLink}>
                         Reset Password
                     </button>

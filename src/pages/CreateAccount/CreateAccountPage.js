@@ -73,11 +73,12 @@ const CreateAccountPage = () => {
     };
 
     return (
-        <div className={styles.createAccountContainer}>
+        <div id="create-account-container" className={styles.createAccountContainer}>
             {/* Top Bar */}
-            <div className={styles.topBar}>
-                <div className={styles.appName}>PolicyMaster</div>
+            <div id="top-bar" className={styles.topBar}>
+                <div id="app-name" className={styles.appName}>PolicyMaster</div>
                 <Navbar
+                    id="navbar"
                     tabs={['Desktop', 'Account', 'Submission', 'Contact', 'Search', 'Administration']}
                     activeTab={activeTopTab}
                     onTabClick={handleTopTabClick}
@@ -86,15 +87,15 @@ const CreateAccountPage = () => {
             </div>
 
             {/* Page Content */}
-            <div className={styles.pageContent}>
+            <div id="page-content" className={styles.pageContent}>
                 {/* Title and Buttons */}
-                <div className={styles.titleContainer}>
-                    <h1 className={styles.pageTitle}>Create Account</h1>
-                    <div className={styles.buttonContainer}>
-                        <button onClick={handleUpdate} className={styles.updateButton}>
+                <div id="title-container" className={styles.titleContainer}>
+                    <h1 id="page-title" className={styles.pageTitle}>Create Account</h1>
+                    <div id="button-container" className={styles.buttonContainer}>
+                        <button id="update-button" onClick={handleUpdate} className={styles.updateButton}>
                             Update
                         </button>
-                        <button onClick={handleCancel} className={styles.cancelButton}>
+                        <button id="cancel-button" onClick={handleCancel} className={styles.cancelButton}>
                             Cancel
                         </button>
                     </div>
@@ -102,11 +103,11 @@ const CreateAccountPage = () => {
 
                 {/* Error Section */}
                 {showError && (
-                    <div className={styles.errorSection}>
+                    <div id="error-section" className={styles.errorSection}>
                         Errors on current page
-                        <div className={styles.errorMessageContainer}>
-                            <div className={styles.errorIcon}>!</div>
-                            <div className={styles.errorMessage}>
+                        <div id="error-message-container" className={styles.errorMessageContainer}>
+                            <div id="error-icon" className={styles.errorIcon}>!</div>
+                            <div id="error-message" className={styles.errorMessage}>
                                 Please fill in all mandatory fields.
                             </div>
                         </div>
@@ -114,10 +115,11 @@ const CreateAccountPage = () => {
                 )}
 
                 {/* Form */}
-                <form className={styles.form}>
+                <form id="create-account-form" className={styles.form}>
                     <div className={styles.formGroup}>
-                        <label>Organization <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="organization">Organization <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="organization"
                             type="text"
                             name="organization"
                             value={formData.organization}
@@ -126,8 +128,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>Date Application Received <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="dateApplicationReceived">Date Application Received <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="dateApplicationReceived"
                             type="date"
                             name="dateApplicationReceived"
                             value={formData.dateApplicationReceived}
@@ -135,8 +138,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>Name <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="name">Name <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="name"
                             type="text"
                             name="name"
                             value={formData.name}
@@ -145,8 +149,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>Address Line 1 <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="addressLine1">Address Line 1 <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="addressLine1"
                             type="text"
                             name="addressLine1"
                             value={formData.addressLine1}
@@ -155,8 +160,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>Address Line 2</label>
+                        <label htmlFor="addressLine2">Address Line 2</label>
                         <input
+                            id="addressLine2"
                             type="text"
                             name="addressLine2"
                             value={formData.addressLine2}
@@ -165,8 +171,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>City <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="city">City <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="city"
                             type="text"
                             name="city"
                             value={formData.city}
@@ -175,8 +182,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>County <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="county">County <span className={styles.mandatory}>*</span></label>
                         <input
+                            id="county"
                             type="text"
                             name="county"
                             value={formData.county}
@@ -185,8 +193,9 @@ const CreateAccountPage = () => {
                         />
                     </div>
                     <div className={styles.formGroup}>
-                        <label>State <span className={styles.mandatory}>*</span></label>
+                        <label htmlFor="state">State <span className={styles.mandatory}>*</span></label>
                         <select
+                            id="state"
                             name="state"
                             value={formData.state}
                             onChange={handleChange}
@@ -200,8 +209,9 @@ const CreateAccountPage = () => {
                         </select>
                     </div>
                     <div className={styles.formGroup}>
-                        <label>Country</label>
+                        <label htmlFor="country">Country</label>
                         <input
+                            id="country"
                             type="text"
                             name="country"
                             value={formData.country}

@@ -32,11 +32,12 @@ const DesktopPage = () => {
     };
 
     return (
-        <div className={styles.desktopContainer}>
+        <div id="desktop-container" className={styles.desktopContainer}>
             {/* Top Bar */}
-            <div className={styles.topBar}>
-                <div className={styles.appName}>PolicyMaster</div>
+            <div id="top-bar" className={styles.topBar}>
+                <div id="app-name" className={styles.appName}>PolicyMaster</div>
                 <Navbar
+                    id="navbar"
                     tabs={['Desktop', 'Account', 'Submission', 'Contact', 'Search', 'Administration']}
                     activeTab={activeTopTab}
                     onTabClick={handleTopTabClick}
@@ -45,9 +46,10 @@ const DesktopPage = () => {
             </div>
 
             {/* Content Layout */}
-            <div className={styles.contentLayout}>
+            <div id="content-layout" className={styles.contentLayout}>
                 {/* Sidebar */}
                 <Sidebar
+                    id="sidebar"
                     items={[
                         'Actions',
                         'Summary',
@@ -64,9 +66,9 @@ const DesktopPage = () => {
                 />
 
                 {/* Main Content */}
-                <div className={styles.mainContent}>
-                    <h1>My Summary</h1>
-                    <p>Welcome to your Desktop page! Here, you can view your summary.</p>
+                <div id="main-content" className={styles.mainContent}>
+                    <h1 id="summary-title">My Summary</h1>
+                    <p id="summary-description">Welcome to your Desktop page! Here, you can view your summary.</p>
                 </div>
             </div>
         </div>
