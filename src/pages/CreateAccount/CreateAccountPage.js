@@ -6,6 +6,7 @@ import styles from './CreateAccountPage.module.css';
 const CreateAccountPage = () => {
     const [activeTopTab, setActiveTopTab] = useState('Account');
     const [showError, setShowError] = useState(false); // State to track error visibility
+    const [successMessage, setSuccessMessage] = useState(''); // State for success message
     const navigate = useNavigate();
 
     // State to manage form fields
@@ -38,8 +39,8 @@ const CreateAccountPage = () => {
             return;
         }
         setShowError(false); // Hide error message if validation passes
-        alert('Account created successfully!');
-        navigate('/desktop'); // Navigate back to the Desktop page
+        setSuccessMessage('Account created successfully! Redirecting to desktop...');
+        setTimeout(() => navigate('/desktop'), 3000); // Redirect to desktop after 3 seconds
     };
 
     // Handle Cancel button click
@@ -68,7 +69,6 @@ const CreateAccountPage = () => {
     };
 
     const handleLogout = () => {
-        alert('You have been logged out.');
         navigate('/'); // Redirect to the Login Page
     };
 
@@ -113,6 +113,7 @@ const CreateAccountPage = () => {
                         </div>
                     </div>
                 )}
+                {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
 
                 {/* Form */}
                 <form id="create-account-form" className={styles.form}>
@@ -225,3 +226,4 @@ const CreateAccountPage = () => {
 };
 
 export default CreateAccountPage;
+

@@ -6,6 +6,7 @@ const ResetPassword = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const [successMessage, setSuccessMessage] = useState('');
     const navigate = useNavigate();
 
     const handleResetPassword = (e) => {
@@ -22,8 +23,9 @@ const ResetPassword = () => {
         }
 
         // Simulate successful password reset
-        alert('Password reset successful!');
-        navigate('/login'); // Redirect to login page
+        setErrorMessage('');
+        setSuccessMessage('Password reset successful! Redirecting to login...');
+        setTimeout(() => navigate('/login'), 3000); // Redirect to login after 3 seconds
     };
 
     const handleCancel = () => {
@@ -53,6 +55,7 @@ const ResetPassword = () => {
                     className={styles.inputField}
                 />
                 {errorMessage && <p className={styles.errorMessage}>{errorMessage}</p>}
+                {successMessage && <p className={styles.successMessage}>{successMessage}</p>}
                 <div className={styles.buttonContainer}>
                     <button
                         type="submit"
