@@ -2,7 +2,7 @@
 import PropTypes from 'prop-types';
 import styles from './Navbar.module.css';
 
-const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
+const Navbar = ({ id, tabs, activeTab, onTabClick, onLogout }) => {
     const [isAccountDropdownVisible, setIsAccountDropdownVisible] = useState(false);
     const [isSubmissionDropdownVisible, setIsSubmissionDropdownVisible] = useState(false);
 
@@ -23,7 +23,7 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
     };
 
     return (
-        <div id="navbar-container" className={styles.navbar}>
+        <div id={id} className={styles.navbar}>
             <div id="nav-tabs" className={styles.navTabs}>
                 {tabs.map((tab, index) => {
                     if (tab === 'Account') {
@@ -107,6 +107,7 @@ const Navbar = ({ tabs, activeTab, onTabClick, onLogout }) => {
 };
 
 Navbar.propTypes = {
+    id: PropTypes.string, // Add this line
     tabs: PropTypes.arrayOf(PropTypes.string).isRequired,
     activeTab: PropTypes.string.isRequired,
     onTabClick: PropTypes.func.isRequired,
